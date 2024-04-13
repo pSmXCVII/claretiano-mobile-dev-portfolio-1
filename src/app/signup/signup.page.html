@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Dados do usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-item>
+    <ion-label>Email:</ion-label>
+    <ion-input [placeholder]="userData.email ? userData.email : 'Não preenchido'" [(ngModel)]="userData.email" disabled></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Telefone:</ion-label>
+    <ion-input [placeholder]="userData.phone ? userData.phone : 'Não preenchido'" [(ngModel)]="userData.phone" disabled></ion-input>
+  </ion-item>
+  <ion-button (click)="showForm()">Informe seus dados</ion-button>
+  <ion-button href="/">Voltar ao início</ion-button>
+
+</ion-content>
