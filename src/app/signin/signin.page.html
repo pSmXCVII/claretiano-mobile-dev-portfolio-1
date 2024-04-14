@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input label="Usuário:" [(ngModel)]="sessionData.user" required></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input label="Senha:" [(ngModel)]="sessionData.password" type="password" required></ion-input>
+  </ion-item>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/">Voltar ao início</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="login()">Entrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

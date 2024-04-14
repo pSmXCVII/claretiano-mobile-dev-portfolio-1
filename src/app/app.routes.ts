@@ -14,4 +14,12 @@ export const routes: Routes = [
     path: 'signup',
     loadComponent: () => import('./signup/signup.page').then( m => m.SignupPage)
   },
+  {
+    path: 'signin',
+    loadComponent: () => import('./signin/signin.page').then( m => m.SigninPage)
+  },
+  {
+    path: 'myspace',
+    loadComponent: () => import('./myspace/myspace.page').then( m => m.MyspacePage)
+  },
 ];
