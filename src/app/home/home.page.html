@@ -15,8 +15,12 @@
 
   <ion-content color="light">
     <ion-list [inset]="true">
-      <ion-item *ngFor="let item of seriesList" (click)="showClickedItemName(item.title)">
-        {{ item.title }}
+      <ion-item *ngFor="let item of seriesList" (click)="showClickedItemName(item)">
+        <ion-label>{{ item.title }}</ion-label>
+        <ion-badge color="warning">
+          <ion-icon name="star-outline"></ion-icon>
+          {{ item.stars }}
+        </ion-badge>
       </ion-item>
     </ion-list>
     <ion-button href="/signup">Inscreva-se</ion-button>
