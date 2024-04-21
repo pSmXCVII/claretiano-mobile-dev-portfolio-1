@@ -8,11 +8,12 @@ import {
   IonToolbar,
   IonButton,
   AlertController,
-  IonText,
   IonItem,
-  IonLabel,
   IonInput,
+  IonButtons,
+  IonIcon,
 } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -27,10 +28,10 @@ import {
     CommonModule,
     FormsModule,
     IonButton,
-    IonText,
     IonItem,
-    IonLabel,
     IonInput,
+    IonButtons,
+    IonIcon,
   ],
 })
 export class SignupPage {
@@ -39,12 +40,14 @@ export class SignupPage {
     phone: '',
   };
 
-  constructor(private alertController: AlertController) {}
+  constructor(
+    protected router: Router,
+    private alertController: AlertController
+  ) {}
 
   async onSubmit(data: { email: string; phone: string }) {
     this.userData.email = data?.email;
     this.userData.phone = data?.phone;
-    console.log(this.userData);
   }
 
   async showForm() {
@@ -76,6 +79,7 @@ export class SignupPage {
           value: this.userData.phone,
         },
       ],
+      backdropDismiss: false,
     });
 
     alert.present();

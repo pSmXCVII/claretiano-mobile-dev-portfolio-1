@@ -1,5 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button fill="solid" color="primary" id="login" (click)="this.router.navigate(['/signup'])">
+        Cadastre-se
+        <ion-icon slot="end" name="log-in-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -16,7 +22,7 @@
 <ion-footer>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button routerLink="/">Voltar ao início</ion-button>
+      <ion-button (click)="this.router.navigate(['/'])">Voltar ao início</ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button (click)="login()">Entrar</ion-button>

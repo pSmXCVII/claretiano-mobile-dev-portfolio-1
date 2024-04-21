@@ -1,5 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   IonHeader,
   IonToolbar,
@@ -13,6 +14,7 @@ import {
   ToastController,
   IonBadge,
   IonIcon,
+  IonButtons,
 } from '@ionic/angular/standalone';
 
 interface SeriesList {
@@ -39,6 +41,7 @@ interface SeriesList {
     IonButton,
     IonBadge,
     IonIcon,
+    IonButtons,
   ],
 })
 export class HomePage {
@@ -50,7 +53,10 @@ export class HomePage {
     { id: 5, title: 'Breaking Bad', stars: '1.5k' },
   ];
 
-  constructor(private toastController: ToastController) {}
+  constructor(
+    protected router: Router,
+    private toastController: ToastController
+  ) {}
 
   async showClickedItemName(item: SeriesList) {
     const toast = await this.toastController.create({

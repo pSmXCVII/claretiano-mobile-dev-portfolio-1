@@ -13,6 +13,7 @@ import {
   IonIcon,
 } from '@ionic/angular/standalone';
 import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-myspace',
@@ -36,7 +37,7 @@ import { AuthService } from 'src/app/auth.service';
 export class MyspacePage implements OnInit {
   user: string = this.authService.getLoggedUser() || '';
 
-  constructor(protected authService: AuthService) {}
+  constructor(protected router: Router, protected authService: AuthService) {}
 
   ngOnInit() {
     this.authService.isAuthenticated({ pathWhenUnauthenticated: '/signin' });

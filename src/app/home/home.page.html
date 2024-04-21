@@ -1,8 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Séries favoritas
-    </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button fill="solid" color="success" id="login" (click)="this.router.navigate(['/signin'])">
+        Login
+        <ion-icon slot="end" name="log-in-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="solid" color="primary" id="login" (click)="this.router.navigate(['/signup'])">
+        Cadastre-se
+        <ion-icon slot="end" name="log-in-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Séries favoritas</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -23,6 +31,5 @@
         </ion-badge>
       </ion-item>
     </ion-list>
-    <ion-button href="/signup">Inscreva-se</ion-button>
   </ion-content>
 </ion-content>

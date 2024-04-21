@@ -14,8 +14,10 @@ import {
   IonInput,
   IonFooter,
   IonButtons,
+  IonIcon,
 } from '@ionic/angular/standalone';
 import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -36,6 +38,7 @@ import { AuthService } from 'src/app/auth.service';
     IonInput,
     IonFooter,
     IonButtons,
+    IonIcon,
   ],
 })
 export class SigninPage implements OnInit {
@@ -51,6 +54,7 @@ export class SigninPage implements OnInit {
   ];
 
   constructor(
+    protected router: Router,
     private alertController: AlertController,
     private authService: AuthService
   ) {}

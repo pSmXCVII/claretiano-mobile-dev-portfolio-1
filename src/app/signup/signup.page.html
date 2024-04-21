@@ -1,5 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="primary">
+      <ion-button fill="solid" color="success" id="login" (click)="this.router.navigate(['/signin'])">
+        Login
+        <ion-icon slot="end" name="log-in-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>Dados do usuário</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -7,14 +13,11 @@
 <ion-content [fullscreen]="true">
 
   <ion-item>
-    <ion-label>Email:</ion-label>
-    <ion-input [placeholder]="userData.email ? userData.email : 'Não preenchido'" [(ngModel)]="userData.email" disabled></ion-input>
+    <ion-input label="E-mail:" [placeholder]="userData.email ? userData.email : 'Não preenchido'" [(ngModel)]="userData.email" disabled></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Telefone:</ion-label>
-    <ion-input [placeholder]="userData.phone ? userData.phone : 'Não preenchido'" [(ngModel)]="userData.phone" disabled></ion-input>
+    <ion-input label="Telefone:" [placeholder]="userData.phone ? userData.phone : 'Não preenchido'" [(ngModel)]="userData.phone" disabled></ion-input>
   </ion-item>
   <ion-button (click)="showForm()">Informe seus dados</ion-button>
-  <ion-button href="/">Voltar ao início</ion-button>
 
 </ion-content>
