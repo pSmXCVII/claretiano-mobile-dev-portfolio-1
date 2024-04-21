@@ -1,5 +1,10 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="this.router.navigate(['/'])">
+        <ion-icon name="home-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-buttons slot="primary">
       <ion-button fill="solid" color="primary" id="login" (click)="this.router.navigate(['/signup'])">
         Cadastre-se
@@ -17,15 +22,5 @@
   <ion-item>
     <ion-input label="Senha:" [(ngModel)]="sessionData.password" type="password" required></ion-input>
   </ion-item>
+  <ion-button (click)="login()">Entrar</ion-button>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="this.router.navigate(['/'])">Voltar ao início</ion-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button (click)="login()">Entrar</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
