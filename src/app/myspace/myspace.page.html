@@ -1,6 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>myspace</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button fill="solid" color="danger" id="logout" (click)="this.authService.logout()">
+        Sair
+        <ion-icon slot="end" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>MySpace</ion-title>
   </ion-toolbar>
 </ion-header>
 

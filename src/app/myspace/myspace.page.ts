@@ -8,6 +8,9 @@ import {
   IonToolbar,
   IonCard,
   IonCardContent,
+  IonButton,
+  IonButtons,
+  IonIcon,
 } from '@ionic/angular/standalone';
 import { AuthService } from 'src/app/auth.service';
 
@@ -25,12 +28,15 @@ import { AuthService } from 'src/app/auth.service';
     FormsModule,
     IonCard,
     IonCardContent,
+    IonButton,
+    IonButtons,
+    IonIcon,
   ],
 })
 export class MyspacePage implements OnInit {
   user: string = this.authService.getLoggedUser() || '';
 
-  constructor(private authService: AuthService) {}
+  constructor(protected authService: AuthService) {}
 
   ngOnInit() {
     this.authService.isAuthenticated({ pathWhenUnauthenticated: '/signin' });

@@ -47,11 +47,13 @@ export class AuthService {
 
   logout() {
     try {
+      this.loggedUser = '';
       sessionStorage.removeItem('user');
-      return true;
+      this.router.navigate(['/signin']);
+      return undefined;
     } catch (error) {
       console.error(error);
-      return false;
+      return error;
     }
   }
 
