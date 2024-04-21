@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
@@ -15,7 +15,6 @@ import {
   IonFooter,
   IonButtons,
 } from '@ionic/angular/standalone';
-import { RouterModule, Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
 
 @Component({
@@ -37,10 +36,9 @@ import { AuthService } from 'src/app/auth.service';
     IonInput,
     IonFooter,
     IonButtons,
-    RouterModule,
   ],
 })
-export class SigninPage {
+export class SigninPage implements OnInit {
   sessionData = {
     user: '',
     password: '',
@@ -54,20 +52,17 @@ export class SigninPage {
 
   constructor(
     private alertController: AlertController,
-    private router: Router,
     private authService: AuthService
   ) {}
 
   async login() {
-    if (
-      this.authService.login(this.sessionData.user, this.sessionData.password)
-    ) {
-      this.router.navigate(['/myspace']);
-    } else {
-      this.showSimpleAlert(
-        'Falha na autenticação!',
-        'Usuário não encontrado ou senha inválida'
-      );
+    const loginResponseError = this.authService.login(
+      this.sessionData.user,
+      this.sessionData.password
+    );
+
+    if (loginResponseError) {
+      this.showSimpleAlert('Falha na autenticação!', loginResponseError);
       this.sessionData.password = '';
     }
   }
@@ -80,5 +75,9 @@ export class SigninPage {
     });
 
     await alert.present();
+  }
+
+  ngOnInit() {
+    this.authService.isAuthenticated({ pathWhenAuthenticated: '/myspace' });
   }
 }

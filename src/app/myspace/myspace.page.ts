@@ -28,11 +28,11 @@ import { AuthService } from 'src/app/auth.service';
   ],
 })
 export class MyspacePage implements OnInit {
-  user: string = '';
+  user: string = this.authService.getLoggedUser() || '';
 
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    this.user = this.authService.getLoggedUser();
+    this.authService.isAuthenticated({ pathWhenUnauthenticated: '/signin' });
   }
 }
