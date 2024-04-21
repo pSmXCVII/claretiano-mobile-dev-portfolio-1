@@ -63,8 +63,8 @@ export class SigninPage implements OnInit {
 
     if (loginResponseError) {
       this.showSimpleAlert('Falha na autenticação!', loginResponseError);
-      this.sessionData.password = '';
     }
+    this.sessionData.password = '';
   }
 
   async showSimpleAlert(title: string, message: string) {
