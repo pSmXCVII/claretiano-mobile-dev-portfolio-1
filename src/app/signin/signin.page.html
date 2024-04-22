@@ -1,26 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="this.router.navigate(['/'])">
-        <ion-icon name="home-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="primary">
-      <ion-button fill="solid" color="primary" id="login" (click)="this.router.navigate(['/signup'])">
-        Cadastre-se
-        <ion-icon slot="end" name="log-in-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-item>
-    <ion-input label="Usuário:" [(ngModel)]="sessionData.user" required></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-input label="Senha:" [(ngModel)]="sessionData.password" type="password" required></ion-input>
-  </ion-item>
-  <ion-button (click)="login()">Entrar</ion-button>
-</ion-content>
+<ion-menu side="end" contentId="login-main">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button expand="full" fill="solid" color="primary" id="login" (click)="this.router.navigate(['/signup'])">
+      Cadastre-se
+      <ion-icon slot="end" name="log-in-outline"></ion-icon>
+    </ion-button>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="login-main">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="this.router.navigate(['/'])">
+          <ion-icon name="home-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <ion-item>
+      <ion-input label="Usuário:" [(ngModel)]="sessionData.user" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Senha:" [(ngModel)]="sessionData.password" type="password" required></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="login()">Entrar</ion-button>
+  </ion-content>
+</div>

@@ -11,6 +11,8 @@ import {
   IonButton,
   IonButtons,
   IonIcon,
+  IonMenu,
+  IonMenuButton,
 } from '@ionic/angular/standalone';
 import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
@@ -32,6 +34,8 @@ import { Router } from '@angular/router';
     IonButton,
     IonButtons,
     IonIcon,
+    IonMenu,
+    IonMenuButton,
   ],
 })
 export class MyspacePage implements OnInit {

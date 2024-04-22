@@ -12,6 +12,8 @@ import {
   IonInput,
   IonButtons,
   IonIcon,
+  IonMenu,
+  IonMenuButton,
 } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 
@@ -32,6 +34,8 @@ import { Router } from '@angular/router';
     IonInput,
     IonButtons,
     IonIcon,
+    IonMenu,
+    IonMenuButton,
   ],
 })
 export class SignupPage {

@@ -1,25 +1,35 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="this.router.navigate(['/'])">
-        <ion-icon name="home-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="primary">
-      <ion-button fill="solid" color="danger" id="logout" (click)="this.authService.logout()">
-        Sair
-        <ion-icon slot="end" name="log-out-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>MySpace</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-card>
-    <ion-card-content>
-      <h1>Bem-vindo, {{ user }}</h1>
-      <!-- Aqui você pode adicionar qualquer mensagem de boas-vindas que desejar -->
-    </ion-card-content>
-  </ion-card>
-</ion-content>
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button expand="full" fill="solid" color="danger" id="logout" (click)="this.authService.logout()">
+      Sair
+      <ion-icon slot="end" name="log-out-outline"></ion-icon>
+    </ion-button>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="this.router.navigate(['/'])">
+          <ion-icon name="home-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>MySpace</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <ion-card>
+      <ion-card-content>
+        <h1>Bem-vindo, {{ user }}</h1>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</div>

@@ -15,6 +15,9 @@ import {
   IonBadge,
   IonIcon,
   IonButtons,
+  IonMenu,
+  IonMenuButton,
+  IonText,
 } from '@ionic/angular/standalone';
 
 interface SeriesList {
@@ -42,6 +45,9 @@ interface SeriesList {
     IonBadge,
     IonIcon,
     IonButtons,
+    IonMenu,
+    IonMenuButton,
+    IonText,
   ],
 })
 export class HomePage {

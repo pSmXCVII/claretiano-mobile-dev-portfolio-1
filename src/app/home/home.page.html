@@ -1,32 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button (click)="this.router.navigate(['/'])">
-        <ion-icon name="home-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="primary">
-      <ion-button fill="solid" color="success" id="login" (click)="this.router.navigate(['/signin'])">
-        Login
-        <ion-icon slot="end" name="log-in-outline"></ion-icon>
-      </ion-button>
-      <ion-button fill="solid" color="primary" id="login" (click)="this.router.navigate(['/signup'])">
-        Cadastre-se
-        <ion-icon slot="end" name="log-in-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Séries favoritas</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Séries favoritas</ion-title>
+      <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-content color="light">
+  <ion-content class="ion-padding">
+    <ion-button expand="full" fill="solid" color="success" id="login" (click)="this.router.navigate(['/signin'])">
+      Login
+      <ion-icon slot="end" name="log-in-outline"></ion-icon>
+    </ion-button>
+    <ion-button expand="full" fill="solid" color="primary" id="login" (click)="this.router.navigate(['/signup'])">
+      Cadastre-se
+      <ion-icon slot="end" name="log-in-outline"></ion-icon>
+    </ion-button>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="this.router.navigate(['/'])">
+          <ion-icon name="home-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Início</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content color="light" class="ion-padding">
+    <ion-text>
+      <h3>Séries favoritas</h3>
+    </ion-text>
     <ion-list [inset]="true">
       <ion-item *ngFor="let item of seriesList" (click)="showClickedItemName(item)">
         <ion-label>{{ item.title }}</ion-label>
@@ -37,4 +43,4 @@
       </ion-item>
     </ion-list>
   </ion-content>
-</ion-content>
+</div>
